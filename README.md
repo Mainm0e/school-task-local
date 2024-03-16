@@ -97,9 +97,22 @@ Within the bash script, you will find the hashed password for Shrek. To identify
 
 ## Get into root
 
+With the username 'shrek' and the password 'youaresmart', you can access Local1. Once logged in, you'll have permission to read 'user.txt'.
+
+![example](/image/local1-in.jpg)
 
 
+In this scenario, we observe that the user has permission to use Python 3.5. To verify the user's permissions, execute the following command:
+```
+sudo -l
+``` 
+
+To gain root access, we'll utilize Python to instruct the root user to open a root Bash shell:
 
 
+```
+sudo /usr/bin/python3.5 -c 'import os; os.system("/bin/bash")'
+```
 
-
+![example](/image/get-root-shell.jpg)
+> root flag will find in /root/root.txt and use cat command for reading file
